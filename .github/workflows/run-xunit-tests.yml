@@ -21,10 +21,10 @@ jobs:
           dotnet-version: '8.0.x'  # プロジェクトのバージョンに合わせる
 
       - name: Restore dependencies
-        run: dotnet restore CalculatorApp.Tests/
+        run: dotnet restore CalculatorApp/CalculatorApp.sln
 
       - name: Build solution
-        run: dotnet build CalculatorApp.Tests/ --no-restore --configuration Release
+        run: dotnet build CalculatorApp/CalculatorApp.sln --no-restore --configuration Release
 
       - name: Run xUnit tests
         run: dotnet test CalculatorApp.Tests/CalculatorApp.Tests.csproj --no-build --verbosity normal --configuration Release
