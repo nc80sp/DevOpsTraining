@@ -41,7 +41,7 @@ namespace CalculatorApp.Tests
         [Trait("カテゴリ", "エネミー")]
         public void TestC()
         {
-            Assert.Equal(0, 0);
+            Assert.Equal(0, 1);
         }
 
         [Fact]
