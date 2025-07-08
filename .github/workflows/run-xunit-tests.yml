@@ -27,18 +27,4 @@ jobs:
         run: dotnet build CalculatorApp/CalculatorApp.sln --no-restore --configuration Release
 
       - name: Run xUnit tests
-        run: dotnet test CalculatorApp.Tests/CalculatorApp.Tests.csproj --no-build --verbosity normal --configuration Release --logger "xunit;LogFilePath=test-results.xml"
-
-      - name: Upload test results
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
-          path: test-results.xml
-
-      - name: Publish Test Report
-        uses: dorny/test-reporter@v1
-        if: always()  # テスト失敗時も実行
-        with:
-          name: xUnit Results
-          path: test-results.xml
-          reporter: xunit
+        run: dotnet test CalculatorApp.Tests/CalculatorApp.Tests.csproj --no-build --verbosity normal --configuration Release
